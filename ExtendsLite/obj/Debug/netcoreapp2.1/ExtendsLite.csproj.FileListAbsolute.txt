@@ -1,0 +1,8 @@
+E:\project\CHCore\ExtendsLite\bin\Debug\netcoreapp2.1\ExtendsLite.deps.json
+E:\project\CHCore\ExtendsLite\bin\Debug\netcoreapp2.1\ExtendsLite.dll
+E:\project\CHCore\ExtendsLite\bin\Debug\netcoreapp2.1\ExtendsLite.pdb
+E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.AssemblyInfoInputs.cache
+E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.AssemblyInfo.cs
+E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.dll
+E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.pdb

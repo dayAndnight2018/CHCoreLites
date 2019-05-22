@@ -1,0 +1,9 @@
+E:\project\CHCore\DateLite\bin\Debug\netcoreapp2.1\DateLite.deps.json
+E:\project\CHCore\DateLite\bin\Debug\netcoreapp2.1\DateLite.dll
+E:\project\CHCore\DateLite\bin\Debug\netcoreapp2.1\DateLite.pdb
+E:\project\CHCore\DateLite\obj\Debug\netcoreapp2.1\DateLite.csprojAssemblyReference.cache
+E:\project\CHCore\DateLite\obj\Debug\netcoreapp2.1\DateLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\DateLite\obj\Debug\netcoreapp2.1\DateLite.AssemblyInfoInputs.cache
+E:\project\CHCore\DateLite\obj\Debug\netcoreapp2.1\DateLite.AssemblyInfo.cs
+E:\project\CHCore\DateLite\obj\Debug\netcoreapp2.1\DateLite.dll
+E:\project\CHCore\DateLite\obj\Debug\netcoreapp2.1\DateLite.pdb
