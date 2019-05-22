@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebLite.ValidationAttributes
+{
+    public class MaxFloatAttribute : ValidationAttribute
+    {
+        public float ReferFloat { get; set; }
+
+        public MaxFloatAttribute()
+        {
+        }
+
+        public MaxFloatAttribute(string errorMessage) : base(errorMessage)
+        {
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value == null || !(value is float))
+            {
+                return new ValidationResult("The number is null or  invalid");
+            }
+            if ((long)value > ReferFloat)
+            {
+                return new ValidationResult($"The number is great than {ReferFloat}");
+            }
+
+            return ValidationResult.Success;
+        }
+    }
+}
