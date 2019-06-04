@@ -1,0 +1,14 @@
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\SqlLite.deps.json
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\SqlLite.dll
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\SqlLite.pdb
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\IDGeneratorLite.dll
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\IDGeneratorLite.pdb
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.csprojAssemblyReference.cache
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.AssemblyInfoInputs.cache
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.AssemblyInfo.cs
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.csproj.CopyComplete
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.dll
+E:\project\CHCore\SqlLite\obj\Debug\netcoreapp2.1\SqlLite.pdb
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\ExtendsLite.dll
+E:\project\CHCore\SqlLite\bin\Debug\netcoreapp2.1\ExtendsLite.pdb
