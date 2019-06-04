@@ -1,9 +1,12 @@
 E:\project\CHCore\WebLite\bin\Debug\netcoreapp2.1\WebLite.deps.json
 E:\project\CHCore\WebLite\bin\Debug\netcoreapp2.1\WebLite.dll
+E:\project\CHCore\WebLite\bin\Debug\netcoreapp2.1\WebLite.pdb
+E:\project\CHCore\WebLite\bin\Debug\netcoreapp2.1\ExtendsLite.dll
+E:\project\CHCore\WebLite\bin\Debug\netcoreapp2.1\ExtendsLite.pdb
 E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.csprojAssemblyReference.cache
 E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.csproj.CoreCompileInputs.cache
 E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.AssemblyInfoInputs.cache
 E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.AssemblyInfo.cs
-E:\project\CHCore\WebLite\bin\Debug\netcoreapp2.1\WebLite.pdb
+E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.csproj.CopyComplete
 E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.dll
 E:\project\CHCore\WebLite\obj\Debug\netcoreapp2.1\WebLite.pdb
