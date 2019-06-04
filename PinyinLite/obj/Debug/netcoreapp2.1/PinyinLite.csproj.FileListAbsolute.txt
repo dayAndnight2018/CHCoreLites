@@ -1,0 +1,8 @@
+E:\project\CHCore\PinyinLite\bin\Debug\netcoreapp2.1\PinyinLite.deps.json
+E:\project\CHCore\PinyinLite\bin\Debug\netcoreapp2.1\PinyinLite.dll
+E:\project\CHCore\PinyinLite\bin\Debug\netcoreapp2.1\PinyinLite.pdb
+E:\project\CHCore\PinyinLite\obj\Debug\netcoreapp2.1\PinyinLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\PinyinLite\obj\Debug\netcoreapp2.1\PinyinLite.AssemblyInfoInputs.cache
+E:\project\CHCore\PinyinLite\obj\Debug\netcoreapp2.1\PinyinLite.AssemblyInfo.cs
+E:\project\CHCore\PinyinLite\obj\Debug\netcoreapp2.1\PinyinLite.dll
+E:\project\CHCore\PinyinLite\obj\Debug\netcoreapp2.1\PinyinLite.pdb

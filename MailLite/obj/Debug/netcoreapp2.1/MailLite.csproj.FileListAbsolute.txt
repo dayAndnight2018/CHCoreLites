@@ -1,0 +1,8 @@
+E:\project\CHCore\MailLite\bin\Debug\netcoreapp2.1\MailLite.deps.json
+E:\project\CHCore\MailLite\bin\Debug\netcoreapp2.1\MailLite.dll
+E:\project\CHCore\MailLite\bin\Debug\netcoreapp2.1\MailLite.pdb
+E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.AssemblyInfoInputs.cache
+E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.AssemblyInfo.cs
+E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.dll
+E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.pdb

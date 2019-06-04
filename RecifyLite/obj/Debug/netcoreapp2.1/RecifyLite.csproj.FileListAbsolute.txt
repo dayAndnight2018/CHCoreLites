@@ -1,0 +1,9 @@
+E:\project\CHCore\RecifyLite\bin\Debug\netcoreapp2.1\RecifyLite.deps.json
+E:\project\CHCore\RecifyLite\bin\Debug\netcoreapp2.1\RecifyLite.dll
+E:\project\CHCore\RecifyLite\bin\Debug\netcoreapp2.1\RecifyLite.pdb
+E:\project\CHCore\RecifyLite\obj\Debug\netcoreapp2.1\RecifyLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\RecifyLite\obj\Debug\netcoreapp2.1\RecifyLite.AssemblyInfoInputs.cache
+E:\project\CHCore\RecifyLite\obj\Debug\netcoreapp2.1\RecifyLite.AssemblyInfo.cs
+E:\project\CHCore\RecifyLite\obj\Debug\netcoreapp2.1\RecifyLite.dll
+E:\project\CHCore\RecifyLite\obj\Debug\netcoreapp2.1\RecifyLite.pdb
+E:\project\CHCore\RecifyLite\obj\Debug\netcoreapp2.1\RecifyLite.csprojAssemblyReference.cache
