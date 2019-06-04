@@ -6,3 +6,4 @@ E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.AssemblyInfoIn
 E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.AssemblyInfo.cs
 E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.dll
 E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.pdb
+E:\project\CHCore\ExtendsLite\obj\Debug\netcoreapp2.1\ExtendsLite.csprojAssemblyReference.cache

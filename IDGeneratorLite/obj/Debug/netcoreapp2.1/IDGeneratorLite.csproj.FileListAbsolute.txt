@@ -1,0 +1,17 @@
+E:\project\CHCore\IDGeneratorLite.cs\bin\Debug\netcoreapp2.1\IDGeneratorLite.deps.json
+E:\project\CHCore\IDGeneratorLite.cs\bin\Debug\netcoreapp2.1\IDGeneratorLite.dll
+E:\project\CHCore\IDGeneratorLite.cs\bin\Debug\netcoreapp2.1\IDGeneratorLite.pdb
+E:\project\CHCore\IDGeneratorLite.cs\obj\Debug\netcoreapp2.1\IDGeneratorLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\IDGeneratorLite.cs\obj\Debug\netcoreapp2.1\IDGeneratorLite.AssemblyInfoInputs.cache
+E:\project\CHCore\IDGeneratorLite.cs\obj\Debug\netcoreapp2.1\IDGeneratorLite.AssemblyInfo.cs
+E:\project\CHCore\IDGeneratorLite.cs\obj\Debug\netcoreapp2.1\IDGeneratorLite.dll
+E:\project\CHCore\IDGeneratorLite.cs\obj\Debug\netcoreapp2.1\IDGeneratorLite.pdb
+E:\project\CHCore\IDGeneratorLite\bin\Debug\netcoreapp2.1\IDGeneratorLite.deps.json
+E:\project\CHCore\IDGeneratorLite\bin\Debug\netcoreapp2.1\IDGeneratorLite.dll
+E:\project\CHCore\IDGeneratorLite\bin\Debug\netcoreapp2.1\IDGeneratorLite.pdb
+E:\project\CHCore\IDGeneratorLite\obj\Debug\netcoreapp2.1\IDGeneratorLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\IDGeneratorLite\obj\Debug\netcoreapp2.1\IDGeneratorLite.AssemblyInfoInputs.cache
+E:\project\CHCore\IDGeneratorLite\obj\Debug\netcoreapp2.1\IDGeneratorLite.AssemblyInfo.cs
+E:\project\CHCore\IDGeneratorLite\obj\Debug\netcoreapp2.1\IDGeneratorLite.dll
+E:\project\CHCore\IDGeneratorLite\obj\Debug\netcoreapp2.1\IDGeneratorLite.pdb
+E:\project\CHCore\IDGeneratorLite\obj\Debug\netcoreapp2.1\IDGeneratorLite.csprojAssemblyReference.cache
