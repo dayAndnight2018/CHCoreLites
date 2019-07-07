@@ -1,0 +1,10 @@
+E:\project\CHCore\OfficeFileLite\bin\Debug\netcoreapp2.1\font.ttf
+E:\project\CHCore\OfficeFileLite\bin\Debug\netcoreapp2.1\OfficeFileLite.deps.json
+E:\project\CHCore\OfficeFileLite\bin\Debug\netcoreapp2.1\OfficeFileLite.dll
+E:\project\CHCore\OfficeFileLite\bin\Debug\netcoreapp2.1\OfficeFileLite.pdb
+E:\project\CHCore\OfficeFileLite\obj\Debug\netcoreapp2.1\OfficeFileLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\OfficeFileLite\obj\Debug\netcoreapp2.1\OfficeFileLite.AssemblyInfoInputs.cache
+E:\project\CHCore\OfficeFileLite\obj\Debug\netcoreapp2.1\OfficeFileLite.AssemblyInfo.cs
+E:\project\CHCore\OfficeFileLite\obj\Debug\netcoreapp2.1\OfficeFileLite.dll
+E:\project\CHCore\OfficeFileLite\obj\Debug\netcoreapp2.1\OfficeFileLite.pdb
+E:\project\CHCore\OfficeFileLite\obj\Debug\netcoreapp2.1\OfficeFileLite.csprojAssemblyReference.cache
