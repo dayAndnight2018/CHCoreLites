@@ -1,0 +1,8 @@
+E:\project\CHCore\SchedulerLite\bin\Debug\netcoreapp2.1\SchedulerLite.deps.json
+E:\project\CHCore\SchedulerLite\bin\Debug\netcoreapp2.1\SchedulerLite.dll
+E:\project\CHCore\SchedulerLite\bin\Debug\netcoreapp2.1\SchedulerLite.pdb
+E:\project\CHCore\SchedulerLite\obj\Debug\netcoreapp2.1\SchedulerLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\SchedulerLite\obj\Debug\netcoreapp2.1\SchedulerLite.AssemblyInfoInputs.cache
+E:\project\CHCore\SchedulerLite\obj\Debug\netcoreapp2.1\SchedulerLite.AssemblyInfo.cs
+E:\project\CHCore\SchedulerLite\obj\Debug\netcoreapp2.1\SchedulerLite.dll
+E:\project\CHCore\SchedulerLite\obj\Debug\netcoreapp2.1\SchedulerLite.pdb

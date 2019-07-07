@@ -13,10 +13,7 @@ namespace WebLite.Filters
             {
                 return;
             }
-
-            RestResult result = new RestResult();
-            result.StatusCode = StatusCode.请求错误;
-            result.ReasonPhrase = "The request is invalid";
+            
             List<string> errors = new List<string>();
             foreach (var item in context.ModelState.Keys)
             {
@@ -27,8 +24,7 @@ namespace WebLite.Filters
                 }
 
             }
-            result.Data = errors;
-            context.Result = new BadRequestObjectResult(result);
+            context.Result = new RestResult(StatusCode.请求错误, "The request is invalid", errors);
         }
     }
 }

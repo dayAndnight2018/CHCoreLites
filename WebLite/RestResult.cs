@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ExtendsLite;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace WebLite
 {
@@ -17,24 +17,21 @@ namespace WebLite
         服务器维护 = 503
     }
 
-    public class RestResult
+    public class RestResult : JsonResult
     {
-        public RestResult(StatusCode statusCode, string reasonPhrase, dynamic data = null)
+        public RestResult(StatusCode statusCode, string reasonPhrase = null, dynamic data = null) : base(
+            new {
+            StatusCode = statusCode.IntValue(),
+            ReasonPhrase = reasonPhrase ?? statusCode.StringValue(),
+            Data = data
+        })
         {
-            StatusCode = statusCode;
-            ReasonPhrase = reasonPhrase;
-            Data = data;
+            StatusCode = statusCode.IntValue();
         }
 
-        public RestResult()
+        public override Task ExecuteResultAsync(ActionContext context)
         {
+            return base.ExecuteResultAsync(context);
         }
-
-        public StatusCode StatusCode { get; set; }
-
-        public string ReasonPhrase { get; set; }
-
-        public dynamic Data { get; set; }
-
     }
 }

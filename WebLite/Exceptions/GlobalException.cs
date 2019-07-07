@@ -28,8 +28,7 @@ namespace WebLite.Exceptions
                 ReasonPhrase = "服务器错误",
             });
 
-            logger.LogWarning("异常信息："+context.Exception.Message);
-           
+            logger.LogWarning("异常信息："+context.Exception.Message);           
             logger.LogWarning("异常位置：" + context.Exception.StackTrace);
 
         }

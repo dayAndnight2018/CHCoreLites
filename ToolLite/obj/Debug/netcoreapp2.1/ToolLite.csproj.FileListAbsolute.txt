@@ -1,0 +1,8 @@
+E:\project\CHCore\ToolLite\bin\Debug\netcoreapp2.1\ToolLite.deps.json
+E:\project\CHCore\ToolLite\bin\Debug\netcoreapp2.1\ToolLite.dll
+E:\project\CHCore\ToolLite\bin\Debug\netcoreapp2.1\ToolLite.pdb
+E:\project\CHCore\ToolLite\obj\Debug\netcoreapp2.1\ToolLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\ToolLite\obj\Debug\netcoreapp2.1\ToolLite.AssemblyInfoInputs.cache
+E:\project\CHCore\ToolLite\obj\Debug\netcoreapp2.1\ToolLite.AssemblyInfo.cs
+E:\project\CHCore\ToolLite\obj\Debug\netcoreapp2.1\ToolLite.dll
+E:\project\CHCore\ToolLite\obj\Debug\netcoreapp2.1\ToolLite.pdb
