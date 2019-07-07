@@ -1,0 +1,16 @@
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\CacheLite.deps.json
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\CacheLite.dll
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\CacheLite.pdb
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\ExtendsLite.dll
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\SqlLite.dll
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\WebLite.dll
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\WebLite.pdb
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\ExtendsLite.pdb
+E:\project\CHCore\CacheLite\bin\Debug\netcoreapp2.1\SqlLite.pdb
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.csprojAssemblyReference.cache
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.csproj.CoreCompileInputs.cache
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.AssemblyInfoInputs.cache
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.AssemblyInfo.cs
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.csproj.CopyComplete
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.dll
+E:\project\CHCore\CacheLite\obj\Debug\netcoreapp2.1\CacheLite.pdb

@@ -1,9 +1,9 @@
 E:\project\CHCore\EncryptLite\bin\Debug\netcoreapp2.1\EncryptLite.deps.json
 E:\project\CHCore\EncryptLite\bin\Debug\netcoreapp2.1\EncryptLite.dll
 E:\project\CHCore\EncryptLite\bin\Debug\netcoreapp2.1\EncryptLite.pdb
+E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.csprojAssemblyReference.cache
 E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.csproj.CoreCompileInputs.cache
 E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.AssemblyInfoInputs.cache
 E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.AssemblyInfo.cs
 E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.dll
 E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.pdb
-E:\project\CHCore\EncryptLite\obj\Debug\netcoreapp2.1\EncryptLite.csprojAssemblyReference.cache
