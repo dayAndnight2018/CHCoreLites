@@ -1,7 +1,4 @@
-﻿using AspectCore.Configuration;
-using AspectCore.DynamicProxy;
-using AspectCore.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,14 +9,12 @@ using Newtonsoft.Json.Serialization;
 using SqlLite;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using WebLite.Configurations;
 using WebLite.Exceptions;
 using WebLite.Filters;
+using WebLite.Middlewares.WebSocketMiddleware;
 using WebLite.Tokens;
-using CacheLite;
 
 namespace WebLite.Middlewares
 {
@@ -176,16 +171,16 @@ namespace WebLite.Middlewares
 
                 //添加header验证信息
                 //c.OperationFilter<SwaggerHeader>();
-                var security = new Dictionary<string, IEnumerable<string>> { { swaggerName, new string[] { } } };
-                c.AddSecurityRequirement(security);
+                //var security = new Dictionary<string, IEnumerable<string>> { { swaggerName, new string[] { } } };
+                //c.AddSecurityRequirement(security);
 
-                c.AddSecurityDefinition(swaggerName, new ApiKeyScheme
-                {
-                    Description = "JWT Authorization Info: please fill in the input blank with ' Bearer {token} ' ",
-                    Name = "Authorization",//jwt默认的参数名称
-                    In = "header",//jwt默认存放Authorization信息的位置(请求头中)
-                    Type = "APISecret"
-                });
+                //c.AddSecurityDefinition(swaggerName, new ApiKeyScheme
+                //{
+                //    Description = "JWT Authorization Info: please fill in the input blank with ' Bearer {token} ' ",
+                //    Name = "Authorization",//jwt默认的参数名称
+                //    In = "header",//jwt默认存放Authorization信息的位置(请求头中)
+                //    Type = "APISecret"
+                //});
 
             });
 
@@ -239,14 +234,40 @@ namespace WebLite.Middlewares
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceProvider AddAspectCoreMiddleware(this IServiceCollection services)
-        {
-            services.ConfigureDynamicProxy(config =>
-            {
-                config.Interceptors.AddTyped<LogAspect>(Predicates.ForService("*Service"), Predicates.ForService("*Repository"));
-            });
+        //public static IServiceProvider AddAspectCoreMiddleware(this IServiceCollection services)
+        //{
+        //    services.ConfigureDynamicProxy(config =>
+        //    {
+        //        config.Interceptors.AddTyped<LogAspect>(Predicates.ForService("*Service"), Predicates.ForService("*Repository"));
+        //    });
 
-            return services.BuildAspectInjectorProvider();
+        //    return services.BuildAspectInjectorProvider();
+        //}
+
+        /// <summary>
+        /// 添加Websocket支持
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddWebSocketHelperMiddleware(this IServiceCollection services)
+        {
+            services.AddSingleton<ICustomWebSocketFactory, CustomWebSocketFactory>();
+            services.AddSingleton<ICustomWebSocketMessageHandler, CustomWebSocketMessageHandler>();
+            return services;
+        }
+
+        public static void UseWebSocketMiddleware(this IApplicationBuilder app, WebSocketOptions options = null)
+        {
+            if(options == null)
+            {
+                options = new WebSocketOptions
+                {
+                    KeepAliveInterval = TimeSpan.FromSeconds(120),
+                    ReceiveBufferSize = 4 * 1024
+                };               
+            }
+            app.UseWebSockets(options);
+            app.UserCustomWebSocketManager();
         }
     }
 }

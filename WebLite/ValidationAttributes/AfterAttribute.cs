@@ -18,22 +18,16 @@ namespace WebLite.ValidationAttributes
 
         }
 
-        public DateTime ReferTime
-        {
-            set
-            {
-                refer = value;
-            }
-        }
-
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (!(value is DateTime) || value == null)
             {
                 return new ValidationResult("The type is not DateTime or the value is null.");
             }
+
             DateTime input = (DateTime)value;
-            if (input.CompareTo(refer) <= 0)
+
+            if (input < refer)
             {
                 return new ValidationResult("The date is not in a certain range.");
             }

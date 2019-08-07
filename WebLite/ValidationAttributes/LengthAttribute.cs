@@ -1,19 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace WebLite.ValidationAttributes
 {
-    public class NotBlankAttribute : ValidationAttribute
+    public class LengthAttribute : ValidationAttribute
     {
-        public NotBlankAttribute()
+        private int length = -1;
+        public LengthAttribute()
         {
         }
 
-        public NotBlankAttribute(string errorMessage) : base(errorMessage)
+        public LengthAttribute(string errorMessage) : base(errorMessage)
         {
+
+        }
+
+        public int ReferLength
+        {
+            set
+            {
+                length = value;
+            }
+            get {
+                return length;
+            }
         }
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -22,12 +34,19 @@ namespace WebLite.ValidationAttributes
             {
                 return new ValidationResult("The value is not String");
             }
+
             if (value == null || string.IsNullOrWhiteSpace(((String)value).Trim()))
             {
                 return new ValidationResult("The value is null or blank");
             }
 
+            if (((string)value).Length != ReferLength)
+            {
+                return new ValidationResult("The length of the value is not in a certain range.");
+            }
+
             return ValidationResult.Success;
+
         }
     }
 }

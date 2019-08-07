@@ -51,5 +51,10 @@ namespace WebLite.Models
         {
             return new RestResult(WebLite.StatusCode.服务器维护, reasonPhrase ?? "The server is under repairing!", data);
         }
+
+        protected IActionResult TransObjectResult(TransResult result)
+        {
+            return new RestResult(result);
+        }
     }
 }

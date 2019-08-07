@@ -29,6 +29,17 @@ namespace WebLite
             StatusCode = statusCode.IntValue();
         }
 
+        public RestResult(TransResult result): base(
+            new
+            {
+                StatusCode = result.StatusCode.IntValue(),
+                ReasonPhrase = result.ReasonPhrase ?? result.StatusCode.StringValue(),
+                Data = result.Data
+            } )
+        {
+            StatusCode = result.StatusCode.IntValue();
+        }
+
         public override Task ExecuteResultAsync(ActionContext context)
         {
             return base.ExecuteResultAsync(context);
