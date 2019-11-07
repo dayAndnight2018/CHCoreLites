@@ -6,3 +6,12 @@ E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.AssemblyInfoInputs.c
 E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.AssemblyInfo.cs
 E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.dll
 E:\project\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.pdb
+D:\CHCore\MailLite\bin\Debug\netcoreapp2.1\MailLite.deps.json
+D:\CHCore\MailLite\bin\Debug\netcoreapp2.1\MailLite.dll
+D:\CHCore\MailLite\bin\Debug\netcoreapp2.1\MailLite.pdb
+D:\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.csproj.CoreCompileInputs.cache
+D:\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.AssemblyInfoInputs.cache
+D:\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.AssemblyInfo.cs
+D:\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.dll
+D:\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.pdb
+D:\CHCore\MailLite\obj\Debug\netcoreapp2.1\MailLite.csprojAssemblyReference.cache
