@@ -7,7 +7,7 @@ namespace WebLite.ValidationAttributes
 {
     public class LengthAttribute : ValidationAttribute
     {
-        private int length = -1;
+        private int length = 1;
         public LengthAttribute()
         {
         }
@@ -32,17 +32,17 @@ namespace WebLite.ValidationAttributes
         {
             if (!(value is String))
             {
-                return new ValidationResult("The value is not String");
+                return new ValidationResult(ErrorMessage??"The value is not String");
             }
 
             if (value == null || string.IsNullOrWhiteSpace(((String)value).Trim()))
             {
-                return new ValidationResult("The value is null or blank");
+                return new ValidationResult(ErrorMessage??"The value is null or blank");
             }
 
             if (((string)value).Length != ReferLength)
             {
-                return new ValidationResult("The length of the value is not in a certain range.");
+                return new ValidationResult(ErrorMessage??$"The length of the value is not in a certain range({ReferLength}).");
             }
 
             return ValidationResult.Success;

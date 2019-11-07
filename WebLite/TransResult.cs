@@ -13,19 +13,11 @@ namespace WebLite
             Data = data;
         }
 
-        public TransResult(StatusCode statusCode, string reasonPhrase): this(statusCode, reasonPhrase, null)
-        {
+        public TransResult(StatusCode statusCode, string reasonPhrase) : this(statusCode, reasonPhrase, null) { }
 
-        }
+        public TransResult(StatusCode statusCode) : this(statusCode, null, null) { }
 
-        public TransResult(StatusCode statusCode): this(statusCode, null, null)
-        {
-
-        }
-
-        public TransResult()
-        {
-        }
+        public TransResult() { }
 
         public StatusCode StatusCode { get; set; }
 

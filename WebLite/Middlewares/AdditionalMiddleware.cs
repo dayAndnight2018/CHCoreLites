@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AspectCore.Configuration;
+using AspectCore.Extensions.DependencyInjection;
+using CacheLite;
+using Castle.Core.Logging;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -73,12 +77,12 @@ namespace WebLite.Middlewares
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddProductionFilters(this IServiceCollection services)
+        public static IServiceCollection AddProductionFilters(this IServiceCollection services, Microsoft.Extensions.Logging.ILoggerFactory logger)
         {
             services.AddMvc(options =>
             {
                 options.Filters.Add(new ModelValidationFilterAttribute());
-                options.Filters.Add(new ExceptionHandlerFilterAttribute());
+                options.Filters.Add(new ExceptionHandlerFilterAttribute(logger));
                 options.Filters.Add(typeof(GlobalException));
             });
             return services;
@@ -123,12 +127,12 @@ namespace WebLite.Middlewares
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        public static IServiceCollection AddProductionJsonProvider(this IServiceCollection services)
+        public static IServiceCollection AddProductionJsonProvider(this IServiceCollection services, Microsoft.Extensions.Logging.ILoggerFactory factory)
         {
             services.AddMvc(options =>
             {
                 options.Filters.Add(new ModelValidationFilterAttribute());
-                options.Filters.Add(new ExceptionHandlerFilterAttribute());
+                options.Filters.Add(new ExceptionHandlerFilterAttribute(factory));
                 options.Filters.Add(typeof(GlobalException));
             })
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
@@ -243,6 +247,39 @@ namespace WebLite.Middlewares
 
         //    return services.BuildAspectInjectorProvider();
         //}
+
+        /// <summary>
+        /// 添加日志支持
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="nameSpace"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddLogAspectNameSpace(this IServiceCollection services, String nameSpace)
+        {
+
+            services.ConfigureDynamicProxy(config =>
+            {
+                config.Interceptors.AddTyped<LogAspect>(Predicates.ForNameSpace(nameSpace));
+            });
+            return services;
+        }
+
+
+        public static IServiceCollection AddLogAspect(this IServiceCollection services)
+        {
+            services.ConfigureDynamicProxy(config =>
+            {
+                config.Interceptors.AddTyped<LogAspect>(Predicates.ForService("*Service"), Predicates.ForService("*Repository"));
+            });
+            return services;
+        }
+
+
+        public static IServiceProvider BuildAspectProvider(this IServiceCollection services)
+        {
+            return services.BuildAspectInjectorProvider(); ;
+        }
+
 
         /// <summary>
         /// 添加Websocket支持

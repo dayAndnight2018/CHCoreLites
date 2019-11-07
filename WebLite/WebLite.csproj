@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExtendsLite\ExtendsLite.csproj" />
+    <ProjectReference Include="..\IDGeneratorLite\IDGeneratorLite.csproj" />
     <ProjectReference Include="..\SqlLite\SqlLite.csproj" />
   </ItemGroup>
 

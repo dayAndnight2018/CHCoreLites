@@ -2367,10 +2367,19 @@
       "SqlLite/1.0.0": {
         "dependencies": {
           "ExtendsLite": "1.0.0",
-          "System.Data.SqlClient": "4.6.1"
+          "System.Data.SqlClient": "4.6.1",
+          "IDGeneratorLite": "1.0.0.0"
         },
         "runtime": {
           "SqlLite.dll": {}
+        }
+      },
+      "IDGeneratorLite.Reference/1.0.0.0": {
+        "runtime": {
+          "IDGeneratorLite.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -3802,6 +3811,11 @@
     },
     "SqlLite/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IDGeneratorLite.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

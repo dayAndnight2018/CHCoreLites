@@ -13,6 +13,7 @@ namespace WebLite.Exceptions
     {
         private readonly IHostingEnvironment env;
         private readonly ILogger<GlobalException> logger;
+
         public GlobalException(IHostingEnvironment env, ILogger<GlobalException> logger)
         {
             this.env = env;

@@ -22,11 +22,11 @@ namespace WebLite.ValidationAttributes
         {
             if (value == null || !(value is float))
             {
-                return new ValidationResult("The number is null or  invalid");
+                return new ValidationResult(ErrorMessage??"The number is null or  invalid");
             }
             if ((long)value > ReferFloat)
             {
-                return new ValidationResult($"The number is great than {ReferFloat}");
+                return new ValidationResult(ErrorMessage??$"The number is greater than {ReferFloat}");
             }
 
             return ValidationResult.Success;

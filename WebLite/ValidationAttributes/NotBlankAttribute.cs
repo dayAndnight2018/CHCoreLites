@@ -20,11 +20,11 @@ namespace WebLite.ValidationAttributes
         {
             if (!(value is String))
             {
-                return new ValidationResult("The value is not String");
+                return new ValidationResult(ErrorMessage??"The value is not String");
             }
             if (value == null || string.IsNullOrWhiteSpace(((String)value).Trim()))
             {
-                return new ValidationResult("The value is null or blank");
+                return new ValidationResult(ErrorMessage ?? "The value is null or blank");
             }
 
             return ValidationResult.Success;

@@ -23,11 +23,11 @@ namespace WebLite.ValidationAttributes
         {
             if (value == null || !(value is Int32))
             {
-                return new ValidationResult("The number is null or  invalid");
+                return new ValidationResult(ErrorMessage??"The number is null or  invalid");
             }
             if ((int)value < ReferInteger)
             {
-                return new ValidationResult($"The number is less than {ReferInteger}");
+                return new ValidationResult(ErrorMessage??$"The number is less than {ReferInteger}");
             }
 
             return ValidationResult.Success;

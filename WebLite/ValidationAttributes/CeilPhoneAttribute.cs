@@ -22,13 +22,13 @@ namespace WebLite.ValidationAttributes
         {
             if ( (value == null) || !(value is String))
             {
-                return new ValidationResult("The ceilphone number is null");
+                return new ValidationResult(ErrorMessage??"The ceilphone number is null");
             }
 
             bool result = Regex.IsMatch((String)value, @"^[1]+[3,5,8,4,7,9]+\d{9}");
             if (!result)
             {
-                return new ValidationResult("The ceilphone number is invalid");
+                return new ValidationResult(ErrorMessage??"The ceilphone number is invalid");
             }
 
             return ValidationResult.Success;

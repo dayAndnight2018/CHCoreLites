@@ -11,6 +11,7 @@ namespace WebLite.Configurations
     public class ConfigurationManager
     {
         public static readonly IConfiguration configuration;
+
         static ConfigurationManager()
         {
             configuration = new ConfigurationBuilder()

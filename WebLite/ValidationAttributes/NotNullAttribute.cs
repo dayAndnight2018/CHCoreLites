@@ -20,7 +20,7 @@ namespace WebLite.ValidationAttributes
         {
             if (value is null)
             {
-                return new ValidationResult("The value is null");
+                return new ValidationResult(ErrorMessage??"The value is null");
             }
 
             return ValidationResult.Success;
