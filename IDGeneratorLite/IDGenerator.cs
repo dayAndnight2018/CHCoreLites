@@ -21,6 +21,7 @@ namespace IDGeneratorLite
 
         private static readonly long OffsetTicks =
         DateTime.UtcNow.Ticks - new DateTime(2018, 1, 1, 0, 0, 0, DateTimeKind.Utc).Ticks;
+        
         /// <summary>
         /// 构造器
         /// </summary>
