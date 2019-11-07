@@ -4,14 +4,14 @@ using System.Text;
 
 namespace DateLite
 {
-    public class DateHelper
+    public static class DateHelper
     {
         /// <summary>
         /// 获取时间的文字描述
         /// </summary>
         /// <param name="time">时间</param>
         /// <returns>文字描述</returns>
-        public static string GetDateDescription(DateTime time)
+        public static string DateDescription(this DateTime time)
         {
             DateTime now = DateTime.Now;
             if(time.CompareTo(now)>0)
@@ -63,6 +63,36 @@ namespace DateLite
                 str = (int)(totalSeconds / 3600 / 24 / 30 / 12) + "年前";
             }
             return str;
+        }
+
+        /// <summary>
+        /// 日期时间标准字符串
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public static string DateTimeString(this DateTime time)
+        {
+            return time != null ? time.ToString("yyyy-MM-dd HH:mm:ss") : String.Empty;
+        }
+
+        /// <summary>
+        /// 日期标准字符串
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public static string DateString(this DateTime time)
+        {
+            return time != null ? time.ToString("yyyy-MM-dd") : String.Empty;
+        }
+
+        /// <summary>
+        /// 时间标准字符串
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns></returns>
+        public static string TimeString(this DateTime time)
+        {
+            return time != null ? time.ToString("HH:mm:ss") : String.Empty;
         }
     }
 }
