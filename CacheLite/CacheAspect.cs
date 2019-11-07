@@ -19,7 +19,6 @@ namespace CacheLite
 
         public override async Task Invoke(AspectContext context, AspectDelegate next)
         {
-            //获取自定义缓存键，这个和Memory内存缓存是一样的，不细说
             var cacheKey = context.GetMethodFullName();
 
             //核心1：注意这里和之前不同，是获取的string值，之前是object

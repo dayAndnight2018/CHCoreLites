@@ -1,4 +1,5 @@
 ﻿using AspectCore.DynamicProxy;
+using AspectCore.Injector;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,17 @@ namespace CacheLite
 {
     public class LogAspect : AbstractInterceptor
     {
-        private static readonly string successTemplate = "[{0}]--function: [{1}]--params: [{2}] proceed succeed, results: [{3}]";
-        private static readonly string errorTemplate = "[{0}]--function: [{1}]--params: [{2}] proceed failed, exception: [{3}]";
-        private readonly ILogger logger;
-        public LogAspect(ILogger logger)
+        private static readonly string successTemplate = "function: [{0}] proceed succeed, params: [{1}] , results: [{2}]";
+        private static readonly string errorTemplate = "function: [{0}] proceed failed, params: [{1}] , exception: [{2}]";
+        public LogAspect()
         {
-            this.logger = logger;
+
+        }
+
+        [FromContainer]
+        public ILogger<LogAspect> Logger
+        {
+            get; set;
         }
 
         public override async Task Invoke(AspectContext context, AspectDelegate next)
@@ -26,23 +32,21 @@ namespace CacheLite
                 await next(context);
                 var log = string.Format(
                     successTemplate,
-                    DateTime.Now.ToString("yyyy/MM/dd T HH:mm:ss"),
-                    method.GetBaseDefinition(), string.Join(", ", context.Parameters.Select(a => a.ToString())),
+                    method.GetBaseDefinition(), 
+                    string.Join(", ", context.Parameters.Select(a => a.ToString())),
                     context.ReturnValue
                     );
-                logger.LogInformation(log);
-                Console.WriteLine(log);
+                Logger.LogWarning(log);
             }
             catch (Exception ex)
             {
                 var log = string.Format(
                    errorTemplate,
-                   DateTime.Now.ToString("yyyy/MM/dd T HH:mm:ss"),
-                   method.GetBaseDefinition(), string.Join(", ", context.Parameters.Select(a => a.ToString())),
+                   method.GetBaseDefinition(), 
+                   string.Join(", ", context.Parameters.Select(a => a.ToString())),
                     ex.Message
                    );
-                logger.LogError(log);
-                Console.WriteLine(log);
+                Logger.LogWarning(log);
             }
         }
     }
