@@ -6,21 +6,26 @@ using System.Linq;
 
 namespace SqlLite
 {
-    public class SqlSentence
+    public class SqlSentence<TEntity> where TEntity : class
     {
         private string Sentence { get; set; }
 
-        public string Table { get; set; }
+        private string Table { get; set; } 
 
         public SqlSentence(string table)
         {
             this.Table = table;
         }
 
+        public SqlSentence()
+        {
+            this.Table = typeof(TEntity).Name.ToLower();
+        }
+
         /// <summary>
         /// 选择语句
         /// </summary>
-        public SqlSentence Select()
+        public SqlSentence<TEntity> Select()
         {
             this.Sentence = $" SELECT * FROM {Table} ";
             return this;
@@ -30,7 +35,7 @@ namespace SqlLite
         /// 查询字段
         /// </summary>
         /// <param name="param"></param>
-        public SqlSentence Select(params string[] param)
+        public SqlSentence<TEntity> Select(params string[] param)
         {
             this.Sentence = " SELECT " + string.Join(" , ", param) + $" FROM  {Table} ";
             return this;
@@ -41,7 +46,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence Select(object param)
+        public SqlSentence<TEntity> Select(object param)
         {
             var columns = ParseParams(param);
             this.Sentence = " SELECT " + string.Join(" , ", columns) + $" FROM  {Table} ";
@@ -52,19 +57,18 @@ namespace SqlLite
         /// 删除语句
         /// </summary>
         /// <returns></returns>
-        public SqlSentence Delete()
+        public SqlSentence<TEntity> Delete()
         {
             this.Sentence = $" Delete FROM {Table} ";
             return this;
         }
-
 
         /// <summary>
         /// 更新语句
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence Update(params string[] param)
+        public SqlSentence<TEntity> Update(params string[] param)
         {
             this.Sentence = $" UPDATE {Table} SET " + string.Join(" , ", param.Select(p => p + " = @" + p));
             return this;
@@ -76,7 +80,7 @@ namespace SqlLite
         /// <param name="model">模型</param>
         /// <param name="except">排除项</param>
         /// <returns></returns>
-        public SqlSentence Update(object model, params string[] except)
+        public SqlSentence<TEntity> Update(object model, params string[] except)
         {
             var updateCols = ParseParams(model).Except(except.ToList());
             this.Sentence = $" UPDATE {Table} SET " + string.Join(" , ", updateCols.Select(p => p + " = @" + p));
@@ -88,7 +92,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence InsertParticle(params string[] param)
+        public SqlSentence<TEntity> InsertParticle(params string[] param)
         {
             this.Sentence = $" INSERT INTO {Table} (" + string.Join(" , ", param) + ") VALUES (  " + string.Join(" , ", param.Select(p => "@" + p)) + " ); ";
             return this;
@@ -99,7 +103,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public SqlSentence InsertParticle(object model)
+        public SqlSentence<TEntity> InsertParticle(object model)
         {
             var colNames = ParseParams(model);
             this.Sentence = $" INSERT INTO {Table}( {string.Join(", ", colNames)} ) VALUES( @{string.Join(", @", colNames)}); ";
@@ -111,7 +115,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence InsertFull(params string[] param)
+        public SqlSentence<TEntity> InsertFull(params string[] param)
         {
             this.Sentence = $" INSERT INTO {Table} " + " VALUES ( " + string.Join(" , ", param.Select(p => "@" + p)) + " ); ";
             return this;
@@ -122,9 +126,22 @@ namespace SqlLite
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public SqlSentence InsertFull(object model)
+        public SqlSentence<TEntity> InsertFull(object model)
         {
             var colNames = ParseParams(model);
+            this.Sentence = $" INSERT INTO {Table} VALUES( @{string.Join(", @", colNames)} ); ";
+            return this;
+        }
+
+        /// <summary>
+        /// 完整插入但不包含部分字段
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="excepts"></param>
+        /// <returns></returns>
+        public SqlSentence<TEntity> InsertFull(object model,params String[] excepts)
+        {
+            var colNames = ParseParams(model).Except(excepts);
             this.Sentence = $" INSERT INTO {Table} VALUES( @{string.Join(", @", colNames)} ); ";
             return this;
         }
@@ -135,7 +152,7 @@ namespace SqlLite
         /// <param name="page">页码</param>
         /// <param name="num">每页数量</param>
         /// <returns></returns>
-        public SqlSentence Page(int page, int num)
+        public SqlSentence<TEntity> Page(int page, int num)
         {
             this.Sentence += $" LIMIT {num} OFFSET {(page - 1) * num} ";
             return this;
@@ -146,7 +163,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence Where(params string[] param)
+        public SqlSentence<TEntity> Where(params string[] param)
         {
             this.Sentence += " WHERE " + And(param);
             return this;
@@ -157,7 +174,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence WhereOr(params string[] param)
+        public SqlSentence<TEntity> WhereOr(params string[] param)
         {
             this.Sentence += " WHERE " + Or(param);
             return this;
@@ -179,7 +196,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="clause"></param>
         /// <returns></returns>
-        public SqlSentence WhereClause(string clause)
+        public SqlSentence<TEntity> WhereClause(string clause)
         {
             this.Sentence += " WHERE " + clause;
             return this;
@@ -190,25 +207,25 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence Like(string param)
+        public SqlSentence<TEntity> Like(string param)
         {
             this.Sentence += $" WHERE {param} LIKE %@{param}%";
             return this;
         }
 
-        public SqlSentence OrderBy()
+        public SqlSentence<TEntity> OrderBy()
         {
             this.Sentence += $" ORDER BY ";
             return this;
         }
 
-        public SqlSentence ASC(params string[] param)
+        public SqlSentence<TEntity> ASC(params string[] param)
         {
             this.Sentence += string.Join(" , ", param.Select(p => p + " ASC "));
             return this;
         }
 
-        public SqlSentence DESC(params string[] param)
+        public SqlSentence<TEntity> DESC(params string[] param)
         {
             this.Sentence += string.Join(" , ", param.Select(p => p + " DESC "));
             return this;
@@ -218,7 +235,7 @@ namespace SqlLite
         /// 查询唯一
         /// </summary>
         /// <returns></returns>
-        public SqlSentence SelectDistinct()
+        public SqlSentence<TEntity> SelectDistinct()
         {
             this.Sentence = $" SELECT DISTINCT * FROM {Table} ";
             return this;
@@ -229,7 +246,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence SelectDistinct(params string[] param)
+        public SqlSentence<TEntity> SelectDistinct(params string[] param)
         {
             this.Sentence = " SELECT  DISTINCT " + string.Join(" , ", param) + $" FROM  {Table} ";
             return this;
@@ -240,7 +257,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public SqlSentence SelectDistinct(object param)
+        public SqlSentence<TEntity> SelectDistinct(object param)
         {
             var columns = ParseParams(param);
             this.Sentence = " SELECT  DISTINCT " + string.Join(" , ", columns) + $" FROM  {Table} ";
@@ -255,7 +272,7 @@ namespace SqlLite
         /// <param name="aParams"></param>
         /// <param name="bParams"></param>
         /// <returns></returns>
-        public SqlSentence InnerJoin(string tableB, string[] aParams, string[] bParams)
+        public SqlSentence<TEntity> InnerJoin(string tableB, string[] aParams, string[] bParams)
         {
             this.Sentence = " SELECT  " + string.Join(" , ", aParams.Select(a => "A." + a).Union(bParams.Select(b => "B." + b))) + $" FROM  {Table}  A  INNER  JOIN {tableB}  B ";
             return this;
@@ -268,7 +285,7 @@ namespace SqlLite
         /// <param name="aParams"></param>
         /// <param name="bParams"></param>
         /// <returns></returns>
-        public SqlSentence InnerJoin(string tableB, object aParams, object bParams)
+        public SqlSentence<TEntity> InnerJoin(string tableB, object aParams, object bParams)
         {
             var aColNames = ParseParams(aParams);
             var bColNames = ParseParams(bParams);
@@ -281,7 +298,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="tableB"></param>
         /// <returns></returns>
-        public SqlSentence InnerJoin(string tableB)
+        public SqlSentence<TEntity> InnerJoin(string tableB)
         {
             this.Sentence = $" SELECT  A.* , B.*  FROM  {Table} A  INNER  JOIN {tableB}  B ";
             return this;
@@ -293,7 +310,7 @@ namespace SqlLite
         /// <param name="aReference"></param>
         /// <param name="bReference"></param>
         /// <returns></returns>
-        public SqlSentence JoinWhere(string aReference, string bReference)
+        public SqlSentence<TEntity> JoinWhere(string aReference, string bReference)
         {
             this.Sentence += $" ON  A.{aReference} = B.{bReference} ";
             return this;
@@ -307,7 +324,7 @@ namespace SqlLite
         /// <param name="aParams"></param>
         /// <param name="bParams"></param>
         /// <returns></returns>
-        public SqlSentence LeftJoin(string tableB, string[] aParams, string[] bParams)
+        public SqlSentence<TEntity> LeftJoin(string tableB, string[] aParams, string[] bParams)
         {
             this.Sentence = " SELECT  " + string.Join(" , ", aParams.Select(a => "A." + a).Union(bParams.Select(b => "B." + b))) + $" FROM  {Table}  A  LEFT  JOIN {tableB}  B ";
             return this;
@@ -320,7 +337,7 @@ namespace SqlLite
         /// <param name="aParams"></param>
         /// <param name="bParams"></param>
         /// <returns></returns>
-        public SqlSentence LeftJoin(string tableB, object aParams, object bParams)
+        public SqlSentence<TEntity> LeftJoin(string tableB, object aParams, object bParams)
         {
             var aColNames = ParseParams(aParams);
             var bColNames = ParseParams(bParams);
@@ -333,7 +350,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="tableB"></param>
         /// <returns></returns>
-        public SqlSentence LeftJoin(string tableB)
+        public SqlSentence<TEntity> LeftJoin(string tableB)
         {
             this.Sentence = $" SELECT  A.* , B.*  FROM  {Table} A  LEFT  JOIN {tableB}  B ";
             return this;
@@ -346,7 +363,7 @@ namespace SqlLite
         /// <param name="aParams"></param>
         /// <param name="bParams"></param>
         /// <returns></returns>
-        public SqlSentence RightJoin(string tableB, string[] aParams, string[] bParams)
+        public SqlSentence<TEntity> RightJoin(string tableB, string[] aParams, string[] bParams)
         {
             this.Sentence = " SELECT  " + string.Join(" , ", aParams.Select(a => "A." + a).Union(bParams.Select(b => "B." + b))) + $" FROM  {Table}  A  RIGHT  JOIN {tableB}  B ";
             return this;
@@ -359,7 +376,7 @@ namespace SqlLite
         /// <param name="aParams"></param>
         /// <param name="bParams"></param>
         /// <returns></returns>
-        public SqlSentence RightJoin(string tableB, object aParams, object bParams)
+        public SqlSentence<TEntity> RightJoin(string tableB, object aParams, object bParams)
         {
             var aColNames = ParseParams(aParams);
             var bColNames = ParseParams(bParams);
@@ -372,7 +389,7 @@ namespace SqlLite
         /// </summary>
         /// <param name="tableB"></param>
         /// <returns></returns>
-        public SqlSentence RightJoin(string tableB)
+        public SqlSentence<TEntity> RightJoin(string tableB)
         {
             this.Sentence = $" SELECT  A.* , B.*  FROM  {Table} A  RIGHT  JOIN {tableB}  B ";
             return this;
@@ -383,7 +400,7 @@ namespace SqlLite
         /// 计数
         /// </summary>
         /// <returns></returns>
-        public SqlSentence Count()
+        public SqlSentence<TEntity> Count()
         {
             this.Sentence = $" SELECT COUNT(*) FROM {Table} ";
             return this;

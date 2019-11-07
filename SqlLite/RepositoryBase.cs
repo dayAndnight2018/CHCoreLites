@@ -54,48 +54,48 @@ namespace SqlLite
         /// </summary>
         /// <param name="clause"></param>
         /// <returns></returns>
-        public Task<TEntity> FindAsync(string keyName, object value)
-        {
-            var sqlSentence = new SqlSentence(TableName);
-            var sql = sqlSentence.Select().Where(keyName).ToString();
-            return Db.QuerySingleOrDefaultAsync<TEntity>(sql, value);
-        }
+        //public Task<TEntity> FindAsync(string keyName, object value)
+        //{
+        //    var sqlSentence = new SqlSentence(TableName);
+        //    var sql = sqlSentence.Select().Where(keyName).ToString();
+        //    return Db.QuerySingleOrDefaultAsync<TEntity>(sql, value);
+        //}
 
         /// <summary>
         /// 条件查询所有记录
         /// </summary>
         /// <param name="clause"></param>
         /// <returns></returns>
-        public Task<IEnumerable<TEntity>> QueryAsync(string clause, object value)
-        {
-            var sqlSentence = new SqlSentence(TableName);
-            var sql = sqlSentence.Select().WhereClause(clause).ToString();
-            return Db.QueryAsync<TEntity>(sql, value);
-        }
+        //public Task<IEnumerable<TEntity>> QueryAsync(string clause, object value)
+        //{
+        //    var sqlSentence = new SqlSentence(TableName);
+        //    var sql = sqlSentence.Select().WhereClause(clause).ToString();
+        //    return Db.QueryAsync<TEntity>(sql, value);
+        //}
 
         /// <summary>
         /// 插入单条记录
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public Task InsertAsync(TEntity entity)
-        {
-            var sqlSentence = new SqlSentence(TableName);
-            var sql = sqlSentence.InsertFull(entity).ToString();
-            return Db.ExecuteAsync(sql, entity);
-        }
+        //public Task InsertAsync(TEntity entity)
+        //{
+        //    var sqlSentence = new SqlSentence(TableName);
+        //    var sql = sqlSentence.InsertFull(entity).ToString();
+        //    return Db.ExecuteAsync(sql, entity);
+        //}
 
         /// <summary>
         /// 更新记录
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public Task<int> UpdateAsync(TEntity entity, string clause, object value, params string[] except)
-        {
-            var sqlSentence = new SqlSentence(TableName);
-            var sql = sqlSentence.Update(entity, except).WhereClause(clause).ToString();
-            return Db.ExecuteAsync(sql, value);
-        }
+        //public Task<int> UpdateAsync(TEntity entity, string clause, object value, params string[] except)
+        //{
+        //    var sqlSentence = new SqlSentence(TableName);
+        //    var sql = sqlSentence.Update(entity, except).WhereClause(clause).ToString();
+        //    return Db.ExecuteAsync(sql, value);
+        //}
 
         /// <summary>
         /// 条件局部更新记录
@@ -103,12 +103,12 @@ namespace SqlLite
         /// <param name="update"></param>
         /// <param name="clause"></param>
         /// <returns></returns>
-        public Task<int> UpdateAsync(string clause, object value, params string[] param)
-        {
-            var sqlSentence = new SqlSentence(TableName);
-            var sql = sqlSentence.Update(param).WhereClause(clause).ToString();
-            return Db.ExecuteAsync(sql, value);
-        }
+        //public Task<int> UpdateAsync(string clause, object value, params string[] param)
+        //{
+        //    var sqlSentence = new SqlSentence(TableName);
+        //    var sql = sqlSentence.Update(param).WhereClause(clause).ToString();
+        //    return Db.ExecuteAsync(sql, value);
+        //}
 
         /// <summary>
         /// 根据主键删除记录
@@ -116,12 +116,12 @@ namespace SqlLite
         /// <param name="keyName">主键</param>
         /// <param name="value">主键值</param>
         /// <returns></returns>
-        public Task<int> DeleteAsync(string keyName, object value)
-        {
-            var sqlSentence = new SqlSentence(TableName);
-            var sql = sqlSentence.Delete().Where(keyName).ToString();
-            return Db.ExecuteAsync(sql, value);
-        }
+        //public Task<int> DeleteAsync(string keyName, object value)
+        //{
+        //    var sqlSentence = new SqlSentence(TableName);
+        //    var sql = sqlSentence.Delete().Where(keyName).ToString();
+        //    return Db.ExecuteAsync(sql, value);
+        //}
 
         #endregion
     }
