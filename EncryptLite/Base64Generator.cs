@@ -4,16 +4,16 @@ using System.Text;
 
 namespace EncryptLite
 {
-    public class Base64Generator
+    public static class Base64Generator
     {
         /// <summary>
         /// 默认使用utf-8编码
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string EncodeBase64(string str)
+        public static string ToBase64String(this string str)
         {
-            return EncodeBase64(Encoding.UTF8, str);
+            return str.ToBase64String(Encoding.UTF8);
         }
 
         /// <summary>
@@ -21,9 +21,9 @@ namespace EncryptLite
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string DecodeBase64(string str)
+        public static string FromBase64String(this string str)
         {
-            return DecodeBase64(Encoding.UTF8, str);
+            return str.FromBase64String(Encoding.UTF8);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace EncryptLite
         /// <param name="encode"></param>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string EncodeBase64(Encoding encode, string str)
+        public static string ToBase64String(this string str,Encoding encode)
         {
             byte[] bytes = encode.GetBytes(str);
             try
@@ -51,7 +51,7 @@ namespace EncryptLite
         /// <param name="encode"></param>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string DecodeBase64(Encoding encode, string str)
+        public static string FromBase64String(this string str,Encoding encode)
         {
             byte[] bytes = Convert.FromBase64String(str);
             try

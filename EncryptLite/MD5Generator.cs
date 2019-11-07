@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecifyLite;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -28,6 +29,30 @@ namespace EncryptLite
             }
             return sb.ToString();
         }
-       
+
+        /// <summary>
+        /// 加盐计算MD5值
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="salt"></param>
+        /// <returns></returns>
+        public static string Compute(string input, string salt)
+        {
+            MD5 md = MD5.Create();
+            if (salt == null)
+            {
+                salt = RecifyCodeGenerator.GenerateRandomString(8);
+            } 
+
+            byte[] before = Encoding.UTF8.GetBytes(input + salt);
+            byte[] after = md.ComputeHash(before);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in after)
+            {
+                sb.Append(item.ToString("x2"));
+            }
+            return sb.ToString();
+        }
     }
 }
