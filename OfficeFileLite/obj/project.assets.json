@@ -4434,37 +4434,36 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/dxm/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CHCore\\OfficeFileLite\\OfficeFileLite.csproj",
+      "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/OfficeFileLite/OfficeFileLite.csproj",
       "projectName": "OfficeFileLite",
-      "projectPath": "F:\\CHCore\\OfficeFileLite\\OfficeFileLite.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\CHCore\\OfficeFileLite\\obj\\",
+      "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/OfficeFileLite/OfficeFileLite.csproj",
+      "packagesPath": "/Users/dxm/.nuget/packages/",
+      "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/OfficeFileLite/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/dxm/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj": {
-              "projectPath": "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj"
+            "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj": {
+              "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj"
             }
           }
         }
@@ -4477,6 +4476,7 @@
     },
     "frameworks": {
       "netcoreapp2.1": {
+        "targetAlias": "netcoreapp2.1",
         "dependencies": {
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
@@ -4499,7 +4499,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

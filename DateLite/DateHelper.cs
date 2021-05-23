@@ -16,51 +16,51 @@ namespace DateLite
             DateTime now = DateTime.Now;
             if(time.CompareTo(now)>0)
             {
-                return "未来";
+                return "in the future";
             }
 
             double totalSeconds = now.Subtract(time).TotalSeconds;
-            string str = null;
+            string str = String.Empty;
 
             if (totalSeconds <= 60 * 3)
             {
-                str = "刚刚";
+                str = "just now";
             }
             else if (totalSeconds <= 60 * 5)
             {
-                str = "5分钟前";
+                str = "5 minutes ago";
             }
             else if (totalSeconds <= 60 * 10)
             {
-                str = "10分钟前";
+                str = "10 minutes ago";
             }
             else if (totalSeconds <= 60 * 15)
             {
-                str = "15分钟前";
+                str = "15 minutes ago";
             }
             else if (totalSeconds <= 60 * 30)
             {
-                str = "半小时前";
+                str = "30 minutes ago";
             }
             else if (totalSeconds <= 60 * 60)
             {
-                str = "1小时前";
+                str = "1 hour ago";
             }
             else if (totalSeconds <= 60 * 60 * 24)
             {
-                str = (int)(totalSeconds / 3600) + "小时前";
+                str = (int)(totalSeconds / 3600) + " hours ago";
             }
             else if (totalSeconds <= 60 * 60 * 24 * 30)
             {
-                str = (int)(totalSeconds / 3600 / 24) + "天前";
+                str = (int)(totalSeconds / 3600 / 24) + " days ago";
             }
             else if (totalSeconds < 60 * 60 * 24 * 30 * 12)
             {
-                str = (int)(totalSeconds / 3600 / 24 / 30) + "个月前";
+                str = (int)(totalSeconds / 3600 / 24 / 30) + " months ago";
             }
             else
             {
-                str = (int)(totalSeconds / 3600 / 24 / 30 / 12) + "年前";
+                str = (int)(totalSeconds / 3600 / 24 / 30 / 12) + " years ago";
             }
             return str;
         }
@@ -72,7 +72,7 @@ namespace DateLite
         /// <returns></returns>
         public static string DateTimeString(this DateTime time)
         {
-            return time != null ? time.ToString("yyyy-MM-dd HH:mm:ss") : String.Empty;
+            return time.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace DateLite
         /// <returns></returns>
         public static string DateString(this DateTime time)
         {
-            return time != null ? time.ToString("yyyy-MM-dd") : String.Empty;
+            return time.ToString("yyyy-MM-dd");
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace DateLite
         /// <returns></returns>
         public static string TimeString(this DateTime time)
         {
-            return time != null ? time.ToString("HH:mm:ss") : String.Empty;
+            return time.ToString("HH:mm:ss");
         }
     }
 }

@@ -32,7 +32,7 @@ namespace EncryptLite
         /// <param name="encode"></param>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string ToBase64String(this string str,Encoding encode)
+        public static string ToBase64String(this string str, Encoding encode)
         {
             byte[] bytes = encode.GetBytes(str);
             try
@@ -51,7 +51,7 @@ namespace EncryptLite
         /// <param name="encode"></param>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string FromBase64String(this string str,Encoding encode)
+        public static string FromBase64String(this string str, Encoding encode)
         {
             byte[] bytes = Convert.FromBase64String(str);
             try

@@ -1,37 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CHCore\\CacheLite\\CacheLite.csproj": {}
+    "/Users/dxm/code/personalCode/CHCoreLites/CacheLite/CacheLite.csproj": {}
   },
   "projects": {
-    "F:\\CHCore\\CacheLite\\CacheLite.csproj": {
+    "/Users/dxm/code/personalCode/CHCoreLites/CacheLite/CacheLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CHCore\\CacheLite\\CacheLite.csproj",
+        "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/CacheLite/CacheLite.csproj",
         "projectName": "CacheLite",
-        "projectPath": "F:\\CHCore\\CacheLite\\CacheLite.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\CHCore\\CacheLite\\obj\\",
+        "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/CacheLite/CacheLite.csproj",
+        "packagesPath": "/Users/dxm/.nuget/packages/",
+        "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/CacheLite/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dxm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "F:\\CHCore\\WebLite\\WebLite.csproj": {
-                "projectPath": "F:\\CHCore\\WebLite\\WebLite.csproj"
+              "/Users/dxm/code/personalCode/CHCoreLites/WebLite/WebLite.csproj": {
+                "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/WebLite/WebLite.csproj"
               }
             }
           }
@@ -44,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "AspectCore.Core": {
               "target": "Package",
@@ -82,35 +82,34 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj": {
+    "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj",
+        "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj",
         "projectName": "ExtendsLite",
-        "projectPath": "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\CHCore\\ExtendsLite\\obj\\",
+        "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj",
+        "packagesPath": "/Users/dxm/.nuget/packages/",
+        "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dxm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {}
           }
         },
@@ -122,6 +121,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -140,35 +140,34 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\CHCore\\IDGeneratorLite\\IDGeneratorLite.csproj": {
+    "/Users/dxm/code/personalCode/CHCoreLites/IDGeneratorLite/IDGeneratorLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CHCore\\IDGeneratorLite\\IDGeneratorLite.csproj",
+        "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/IDGeneratorLite/IDGeneratorLite.csproj",
         "projectName": "IDGeneratorLite",
-        "projectPath": "F:\\CHCore\\IDGeneratorLite\\IDGeneratorLite.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\CHCore\\IDGeneratorLite\\obj\\",
+        "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/IDGeneratorLite/IDGeneratorLite.csproj",
+        "packagesPath": "/Users/dxm/.nuget/packages/",
+        "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/IDGeneratorLite/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dxm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {}
           }
         },
@@ -180,6 +179,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -198,38 +198,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\CHCore\\SqlLite\\SqlLite.csproj": {
+    "/Users/dxm/code/personalCode/CHCoreLites/SqlLite/SqlLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CHCore\\SqlLite\\SqlLite.csproj",
+        "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/SqlLite/SqlLite.csproj",
         "projectName": "SqlLite",
-        "projectPath": "F:\\CHCore\\SqlLite\\SqlLite.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\CHCore\\SqlLite\\obj\\",
+        "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/SqlLite/SqlLite.csproj",
+        "packagesPath": "/Users/dxm/.nuget/packages/",
+        "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/SqlLite/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dxm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj": {
-                "projectPath": "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj"
+              "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj": {
+                "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj"
               }
             }
           }
@@ -242,6 +241,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -264,44 +264,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "F:\\CHCore\\WebLite\\WebLite.csproj": {
+    "/Users/dxm/code/personalCode/CHCoreLites/WebLite/WebLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CHCore\\WebLite\\WebLite.csproj",
+        "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/WebLite/WebLite.csproj",
         "projectName": "WebLite",
-        "projectPath": "F:\\CHCore\\WebLite\\WebLite.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\CHCore\\WebLite\\obj\\",
+        "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/WebLite/WebLite.csproj",
+        "packagesPath": "/Users/dxm/.nuget/packages/",
+        "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/WebLite/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dxm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj": {
-                "projectPath": "F:\\CHCore\\ExtendsLite\\ExtendsLite.csproj"
+              "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj": {
+                "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/ExtendsLite/ExtendsLite.csproj"
               },
-              "F:\\CHCore\\IDGeneratorLite\\IDGeneratorLite.csproj": {
-                "projectPath": "F:\\CHCore\\IDGeneratorLite\\IDGeneratorLite.csproj"
+              "/Users/dxm/code/personalCode/CHCoreLites/IDGeneratorLite/IDGeneratorLite.csproj": {
+                "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/IDGeneratorLite/IDGeneratorLite.csproj"
               },
-              "F:\\CHCore\\SqlLite\\SqlLite.csproj": {
-                "projectPath": "F:\\CHCore\\SqlLite\\SqlLite.csproj"
+              "/Users/dxm/code/personalCode/CHCoreLites/SqlLite/SqlLite.csproj": {
+                "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/SqlLite/SqlLite.csproj"
               }
             }
           }
@@ -314,6 +313,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "AspectCore.Extensions.DependencyInjection": {
               "target": "Package",
@@ -396,7 +396,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

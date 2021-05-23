@@ -1,34 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CHCore\\ToolLite\\ToolLite.csproj": {}
+    "/Users/dxm/code/personalCode/CHCoreLites/ToolLite/ToolLite.csproj": {}
   },
   "projects": {
-    "F:\\CHCore\\ToolLite\\ToolLite.csproj": {
+    "/Users/dxm/code/personalCode/CHCoreLites/ToolLite/ToolLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CHCore\\ToolLite\\ToolLite.csproj",
+        "projectUniqueName": "/Users/dxm/code/personalCode/CHCoreLites/ToolLite/ToolLite.csproj",
         "projectName": "ToolLite",
-        "projectPath": "F:\\CHCore\\ToolLite\\ToolLite.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "F:\\CHCore\\ToolLite\\obj\\",
+        "projectPath": "/Users/dxm/code/personalCode/CHCoreLites/ToolLite/ToolLite.csproj",
+        "packagesPath": "/Users/dxm/.nuget/packages/",
+        "outputPath": "/Users/dxm/code/personalCode/CHCoreLites/ToolLite/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/dxm/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +39,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -58,7 +58,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
