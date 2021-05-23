@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,18 +9,22 @@ namespace MailLite
     {
         private static readonly string SMTPSERVER = "smtp.qq.com";
 
-        public async Task<bool> SendMail(string userName, string password, string senderAddress, string senderDisplayName, string toMailAddress, string subject, string content)
+        public async Task<bool> SendMail(MailAuth mailAuth, MailContent mailContent)
         {
             SmtpClient client = new SmtpClient(SMTPSERVER);
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential(userName, password);
+            client.Credentials = new NetworkCredential(mailAuth.Username, mailAuth.Password);
+            
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(senderAddress, senderDisplayName, Encoding.UTF8);
-
-            mail.Subject = $"【{subject}】";
-            mail.Body = content;
-            mail.To.Add(toMailAddress);
+            mail.From = new MailAddress(mailContent.Sender, mailContent.SenderDisplayName, Encoding.UTF8);
+            mail.Subject = mailContent.Subject;
+            mail.Body = mailContent.Content;
+            foreach (var mailTo in mailContent.Receivers)
+            {
+                mail.To.Add(mailTo);
+            }
+            
             await client.SendMailAsync(mail);
             return true;
         }
