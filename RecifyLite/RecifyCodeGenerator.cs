@@ -9,6 +9,26 @@ namespace RecifyLite
 {
     public class RecifyCodeGenerator
     {
+        private static readonly string DIGIT = "0123456789";
+        private static readonly string LETTER = "abcdefghijklmnopqrstuvwyxz";
+        private static readonly string DIGIT_OR_LETTER = "abcdefghijklmnopqrstuvwyxzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        private static string Generate(int len, string pattern)
+        {
+            if (len < 0)
+            {
+                throw new ArgumentException("invalid len");
+            }
+            
+            StringBuilder sb = new StringBuilder();
+            Random rand = new Random();
+            for (int i = 0; i < len; i++)
+            {
+                sb.Append(pattern[rand.Next(pattern.Length)]);
+            }
+            return sb.ToString();
+        }
+        
         /// <summary>
         /// 生成指定长的随机数
         /// </summary>
@@ -16,14 +36,7 @@ namespace RecifyLite
         /// <returns>指定长度的随机数</returns>
         public static String GenerateRandomNumberString(int len)
         {
-            StringBuilder sb = new StringBuilder();
-            string numbers = "0123456789";
-            Random rand = new Random();
-            for (int i = 0; i < len; i++)
-            {
-                sb.Append(numbers[rand.Next(numbers.Length)]);
-            }
-            return sb.ToString();
+            return Generate(len, DIGIT);
         }
 
         /// <summary>
@@ -33,14 +46,7 @@ namespace RecifyLite
         /// <returns></returns>
         public static string GenerateRandomString(int len)
         {
-            StringBuilder sb = new StringBuilder();
-            string alphabet = "abcdefghijklmnopqrstuvwyxzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var rand = new Random();
-            for (int i = 0; i < len; i++)
-            {
-                sb.Append(alphabet[rand.Next(alphabet.Length)]);
-            }
-            return sb.ToString();
+            return Generate(len, DIGIT_OR_LETTER);
         }
 
         /// <summary>
@@ -50,14 +56,7 @@ namespace RecifyLite
         /// <returns>随机字符串</returns>
         public static string GenerateRandomLetterString(int len)
         {
-            StringBuilder sb = new StringBuilder();
-            string alphabet = "abcdefghijklmnopqrstuvwyxz";
-            var rand = new Random();
-            for (int i = 0; i < len; i++)
-            {
-                sb.Append(alphabet[rand.Next(alphabet.Length)]);
-            }
-            return sb.ToString();
+            return Generate(len, LETTER);
         }
 
         /// <summary>
