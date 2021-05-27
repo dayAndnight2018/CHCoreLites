@@ -12,55 +12,53 @@ namespace DateLite
         public static string DateDescription(this DateTime time)
         {
             DateTime now = DateTime.Now;
-            if(time.CompareTo(now)>0)
+            if (time.CompareTo(now) > 0)
             {
                 return "in the future";
             }
 
             double totalSeconds = now.Subtract(time).TotalSeconds;
-            string str = String.Empty;
 
             if (totalSeconds <= 60 * 3)
             {
-                str = "just now";
+                return "just now";
             }
             else if (totalSeconds <= 60 * 5)
             {
-                str = "5 minutes ago";
+                return "5 minutes ago";
             }
             else if (totalSeconds <= 60 * 10)
             {
-                str = "10 minutes ago";
+                return "10 minutes ago";
             }
             else if (totalSeconds <= 60 * 15)
             {
-                str = "15 minutes ago";
+                return "15 minutes ago";
             }
             else if (totalSeconds <= 60 * 30)
             {
-                str = "30 minutes ago";
+                return "30 minutes ago";
             }
             else if (totalSeconds <= 60 * 60)
             {
-                str = "1 hour ago";
+                return "1 hour ago";
             }
             else if (totalSeconds <= 60 * 60 * 24)
             {
-                str = (int)(totalSeconds / 3600) + " hours ago";
+                return (int)(totalSeconds / 3600) + " hours ago";
             }
             else if (totalSeconds <= 60 * 60 * 24 * 30)
             {
-                str = (int)(totalSeconds / 3600 / 24) + " days ago";
+                return (int)(totalSeconds / 3600 / 24) + " days ago";
             }
             else if (totalSeconds < 60 * 60 * 24 * 30 * 12)
             {
-                str = (int)(totalSeconds / 3600 / 24 / 30) + " months ago";
+                return (int)(totalSeconds / 3600 / 24 / 30) + " months ago";
             }
             else
             {
-                str = (int)(totalSeconds / 3600 / 24 / 30 / 12) + " years ago";
+                return (int)(totalSeconds / 3600 / 24 / 30 / 12) + " years ago";
             }
-            return str;
         }
 
         /// <summary>
