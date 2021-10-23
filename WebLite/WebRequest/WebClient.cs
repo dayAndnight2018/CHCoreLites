@@ -11,7 +11,7 @@ namespace WebLite.WebRequest
     /// </summary>
     public class WebClient
     {
-       
+
         /// <summary>
         ///  发起Get请求
         /// </summary>
@@ -20,26 +20,19 @@ namespace WebLite.WebRequest
         /// <returns>期望请求类型返回</returns>
         public static async Task<T> HttpGet<T>(string url)
         {
-            try
+            if (string.IsNullOrWhiteSpace(url))
             {
-                if(string.IsNullOrWhiteSpace(url))
-                {
-                    throw new Exception("The request url is null or empty");
-                }
-                
-                HttpClient client = new HttpClient();
-                var response = await client.GetAsync(url);
-                if (response.IsSuccessStatusCode)
-                {
-                    string responseContent = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<T>(responseContent);
-                }
-                return default(T);
+                throw new Exception("The request url is null or empty");
             }
-            catch
+
+            HttpClient client = new HttpClient();
+            var response = await client.GetAsync(url);
+            if (response.IsSuccessStatusCode)
             {
-                return default(T);
+                string responseContent = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(responseContent);
             }
+            return default(T);
         }
 
         /// <summary>
@@ -50,32 +43,25 @@ namespace WebLite.WebRequest
         /// <param name="contentType">内容协商</param>
         /// <param name="param">发送参数</param>
         /// <returns>期望请求类型返回</returns>
-        public static async Task<T> HttpPost<T>(string url, string contentType = "application/json", object param =null)
+        public static async Task<T> HttpPost<T>(string url, string contentType = "application/json", object param = null)
         {
-            try
+            if (string.IsNullOrWhiteSpace(url))
             {
-                if (string.IsNullOrWhiteSpace(url))
-                {
-                    throw new Exception("The request url is null or empty");
-                }
-
-                HttpClient client = new HttpClient();
-                if (param != null)
-                {
-                    var data = JsonConvert.SerializeObject(param);
-                    HttpContent httpContent = new StringContent(data);
-                    httpContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
-                    var responseContent = await client.PostAsync(url, httpContent).Result.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<T>(responseContent);
-                }
-                else
-                {
-                    return await HttpGet<T>(url);
-                }
+                throw new Exception("The request url is null or empty");
             }
-            catch
+
+            HttpClient client = new HttpClient();
+            if (param != null)
             {
-                return default(T);
+                var data = JsonConvert.SerializeObject(param);
+                HttpContent httpContent = new StringContent(data);
+                httpContent.Headers.ContentType = new MediaTypeHeaderValue(contentType);
+                var responseContent = await client.PostAsync(url, httpContent).Result.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(responseContent);
+            }
+            else
+            {
+                return await HttpGet<T>(url);
             }
         }
     }

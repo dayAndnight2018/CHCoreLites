@@ -4,6 +4,7 @@ namespace DateLite
 {
     public static class DateHelper
     {
+        
         /// <summary>
         /// 获取时间的文字描述
         /// </summary>
@@ -11,13 +12,13 @@ namespace DateLite
         /// <returns>文字描述</returns>
         public static string DateDescription(this DateTime time)
         {
-            DateTime now = DateTime.Now;
+            var now = DateTime.Now;
             if (time.CompareTo(now) > 0)
             {
                 return "in the future";
             }
 
-            double totalSeconds = now.Subtract(time).TotalSeconds;
+            var totalSeconds = now.Subtract(time).TotalSeconds;
 
             if (totalSeconds <= 60 * 3)
             {
@@ -68,7 +69,7 @@ namespace DateLite
         /// <returns></returns>
         public static string DateTimeString(this DateTime time)
         {
-            return time.ToString("yyyy-MM-dd HH:mm:ss");
+            return time.ToString(DateFormat.DATE_TIME);
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace DateLite
         /// <returns></returns>
         public static string DateString(this DateTime time)
         {
-            return time.ToString("yyyy-MM-dd");
+            return time.ToString(DateFormat.DATE);
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace DateLite
         /// <returns></returns>
         public static string TimeString(this DateTime time)
         {
-            return time.ToString("HH:mm:ss");
+            return time.ToString(DateFormat.TIME);
         }
     }
 }

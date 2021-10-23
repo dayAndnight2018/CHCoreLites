@@ -37,8 +37,6 @@
  * 
  */
 
-using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace PinyinLite
@@ -54,10 +52,10 @@ namespace PinyinLite
         public static string GetInitials(string text)
         {
             text = text.Trim();
-            StringBuilder chars = new StringBuilder();
+            var chars = new StringBuilder();
             for (var i = 0; i < text.Length; ++i)
             {
-                string py = GetPinyin(text[i]);
+                var py = GetPinyin(text[i]);
                 if (py != "") chars.Append(py[0]);
             }
 

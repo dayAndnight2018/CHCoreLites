@@ -53,7 +53,7 @@ namespace EncryptLite
         /// <returns></returns>
         public static string FromBase64String(this string str, Encoding encode)
         {
-            byte[] bytes = Convert.FromBase64String(str);
+            var bytes = Convert.FromBase64String(str);
             try
             {
                 return encode.GetString(bytes);

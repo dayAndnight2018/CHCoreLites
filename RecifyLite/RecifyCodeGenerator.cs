@@ -20,9 +20,9 @@ namespace RecifyLite
                 throw new ArgumentException("invalid len");
             }
             
-            StringBuilder sb = new StringBuilder();
-            Random rand = new Random();
-            for (int i = 0; i < len; i++)
+            var sb = new StringBuilder();
+            var rand = new Random();
+            for (var i = 0; i < len; i++)
             {
                 sb.Append(pattern[rand.Next(pattern.Length)]);
             }
@@ -34,7 +34,7 @@ namespace RecifyLite
         /// </summary>
         /// <param name="len">长度</param>
         /// <returns>指定长度的随机数</returns>
-        public static String GenerateRandomNumberString(int len)
+        public static string GenerateRandomNumberString(int len)
         {
             return Generate(len, DIGIT);
         }
@@ -67,40 +67,38 @@ namespace RecifyLite
         /// <returns>验证码图片</returns>
         public static Bitmap GenerateRecifyImage(string verifyCode, int width = 150, int height = 50)
         {
-            Font font = new Font("Arial", 14, (FontStyle.Bold | FontStyle.Italic));
-            Brush brush;
-            Bitmap bitmap = new Bitmap(width, height);
-            Graphics g = Graphics.FromImage(bitmap);
-            SizeF totalSizeF = g.MeasureString(verifyCode, font);
-            SizeF curCharSizeF;
+            var font = new Font("Arial", 14, (FontStyle.Bold | FontStyle.Italic));
+            var bitmap = new Bitmap(width, height);
+            var g = Graphics.FromImage(bitmap);
+            var totalSizeF = g.MeasureString(verifyCode, font);
 
-            PointF startPointF = new PointF(0, (height - totalSizeF.Height) / 2);
-            Random random = new Random(); //随机数产生器
+            var startPointF = new PointF(0, (height - totalSizeF.Height) / 2);
+            var random = new Random(); //随机数产生器
             g.Clear(Color.White); //清空图片背景色  
 
-            for (int i = 0; i < verifyCode.Length; i++)
+            for (var i = 0; i < verifyCode.Length; i++)
             {
-                brush = new LinearGradientBrush(new Point(0, 0), new Point(1, 1), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)));
+                var brush = new LinearGradientBrush(new Point(0, 0), new Point(1, 1), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)));
                 g.DrawString(verifyCode[i].ToString(), font, brush, startPointF);
-                curCharSizeF = g.MeasureString(verifyCode[i].ToString(), font);
+                var curCharSizeF = g.MeasureString(verifyCode[i].ToString(), font);
                 startPointF.X += curCharSizeF.Width;
             }
 
             //画图片的干扰线  
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
-                int x1 = random.Next(bitmap.Width);
-                int x2 = random.Next(bitmap.Width);
-                int y1 = random.Next(bitmap.Height);
-                int y2 = random.Next(bitmap.Height);
+                var x1 = random.Next(bitmap.Width);
+                var x2 = random.Next(bitmap.Width);
+                var y1 = random.Next(bitmap.Height);
+                var y2 = random.Next(bitmap.Height);
                 g.DrawLine(new Pen(Color.Silver), x1, y1, x2, y2);
             }
 
             //画图片的前景干扰点  
-            for (int i = 0; i < 100; i++)
+            for (var i = 0; i < 100; i++)
             {
-                int x = random.Next(bitmap.Width);
-                int y = random.Next(bitmap.Height);
+                var x = random.Next(bitmap.Width);
+                var y = random.Next(bitmap.Height);
                 bitmap.SetPixel(x, y, Color.FromArgb(random.Next()));
             }
 
@@ -119,40 +117,38 @@ namespace RecifyLite
         /// <returns></returns>
         public static Stream GenerateRecifyImageStream(string verifyCode, int width = 150, int height = 50)
         {
-            Font font = new Font("Arial", 14, (FontStyle.Bold | FontStyle.Italic));
-            Brush brush;
-            Bitmap bitmap = new Bitmap(width, height);
-            Graphics g = Graphics.FromImage(bitmap);
-            SizeF totalSizeF = g.MeasureString(verifyCode, font);
-            SizeF curCharSizeF;
+            var font = new Font("Arial", 14, (FontStyle.Bold | FontStyle.Italic));
+            var bitmap = new Bitmap(width, height);
+            var g = Graphics.FromImage(bitmap);
+            var totalSizeF = g.MeasureString(verifyCode, font);
 
-            PointF startPointF = new PointF(0, (height - totalSizeF.Height) / 2);
-            Random random = new Random(); //随机数产生器
+            var startPointF = new PointF(0, (height - totalSizeF.Height) / 2);
+            var random = new Random(); //随机数产生器
             g.Clear(Color.White); //清空图片背景色  
 
-            for (int i = 0; i < verifyCode.Length; i++)
+            for (var i = 0; i < verifyCode.Length; i++)
             {
-                brush = new LinearGradientBrush(new Point(0, 0), new Point(1, 1), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)));
+                var brush = new LinearGradientBrush(new Point(0, 0), new Point(1, 1), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)), Color.FromArgb(random.Next(255), random.Next(255), random.Next(255)));
                 g.DrawString(verifyCode[i].ToString(), font, brush, startPointF);
-                curCharSizeF = g.MeasureString(verifyCode[i].ToString(), font);
+                var curCharSizeF = g.MeasureString(verifyCode[i].ToString(), font);
                 startPointF.X += curCharSizeF.Width;
             }
 
             //画图片的干扰线  
-            for (int i = 0; i < 10; i++)
+            for (var i = 0; i < 10; i++)
             {
-                int x1 = random.Next(bitmap.Width);
-                int x2 = random.Next(bitmap.Width);
-                int y1 = random.Next(bitmap.Height);
-                int y2 = random.Next(bitmap.Height);
+                var x1 = random.Next(bitmap.Width);
+                var x2 = random.Next(bitmap.Width);
+                var y1 = random.Next(bitmap.Height);
+                var y2 = random.Next(bitmap.Height);
                 g.DrawLine(new Pen(Color.Silver), x1, y1, x2, y2);
             }
 
             //画图片的前景干扰点  
-            for (int i = 0; i < 100; i++)
+            for (var i = 0; i < 100; i++)
             {
-                int x = random.Next(bitmap.Width);
-                int y = random.Next(bitmap.Height);
+                var x = random.Next(bitmap.Width);
+                var y = random.Next(bitmap.Height);
                 bitmap.SetPixel(x, y, Color.FromArgb(random.Next()));
             }
 

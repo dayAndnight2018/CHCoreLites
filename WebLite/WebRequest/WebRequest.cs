@@ -1,3 +1,4 @@
+using ExtendsLite;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,20 @@ using System.Threading.Tasks;
 
 namespace WebLite.WebRequest
 {
+    enum HttpMethod
+    {
+        GET,
+        POST
+    }
+
     /// <summary>
     ///  基于WebRequest发起请求
     /// </summary>
     public class WebRequest
     {
+        private static readonly string GET = HttpMethod.GET.StringValue();
+        private static readonly string POST = HttpMethod.POST.StringValue();
+
         /// <summary>
         ///  发起Get请求
         /// </summary>
@@ -21,31 +31,24 @@ namespace WebLite.WebRequest
         /// <returns>期望请求类型返回</returns>
         public static async Task<T> HttpGet<T>(string url)
         {
-            try
+            if (string.IsNullOrWhiteSpace(url))
             {
-                if (string.IsNullOrWhiteSpace(url))
-                {
-                    throw new Exception("The request url is null or empty");
-                }
-
-                HttpWebRequest request = System.Net.WebRequest.Create(url) as HttpWebRequest;
-                request.KeepAlive = true;
-                request.Method = "GET";
-                request.ContentType = "application/json";
-
-                string responseContent = null;
-                using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
-                {
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
-                    {
-                        responseContent = await reader.ReadToEndAsync();
-                    }
-                    return JsonConvert.DeserializeObject<T>(responseContent);
-                }
+                throw new Exception("The request url is null or empty");
             }
-            catch
+
+            HttpWebRequest request = System.Net.WebRequest.Create(url) as HttpWebRequest;
+            request.KeepAlive = true;
+            request.Method = GET;
+            request.ContentType = "application/json";
+
+            string responseContent = null;
+            using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
             {
-                return default(T);
+                using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
+                {
+                    responseContent = await reader.ReadToEndAsync();
+                }
+                return JsonConvert.DeserializeObject<T>(responseContent);
             }
 
         }
@@ -60,46 +63,39 @@ namespace WebLite.WebRequest
         /// <returns>期望请求类型返回</returns>
         public static async Task<T> HttpPost<T>(string url, string contentType = "application/json", object param = null)
         {
-            try
+            if (string.IsNullOrWhiteSpace(url))
             {
-                if (string.IsNullOrWhiteSpace(url))
+                throw new Exception("The request url is null or empty");
+            }
+
+            HttpWebRequest request = System.Net.WebRequest.Create(url) as HttpWebRequest;
+            request.KeepAlive = true;
+            request.Method = POST;
+            request.ContentType = contentType;
+
+            if (param != null)
+            {
+                var data = JsonConvert.SerializeObject(param);
+                byte[] dataBytes = Encoding.UTF8.GetBytes(data);
+                using (Stream requestStream = await request.GetRequestStreamAsync())
                 {
-                    throw new Exception("The request url is null or empty");
+                    requestStream.Write(dataBytes, 0, dataBytes.Length);
+                    requestStream.Flush();
                 }
 
-                HttpWebRequest request = System.Net.WebRequest.Create(url) as HttpWebRequest;
-                request.KeepAlive = true;
-                request.Method = "POST";
-                request.ContentType = contentType;
-
-                if (param != null)
+                string responseContent = null;
+                using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
                 {
-                    var data = JsonConvert.SerializeObject(param);
-                    byte[] dataBytes = Encoding.UTF8.GetBytes(data);
-                    using (Stream requestStream = await request.GetRequestStreamAsync())
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
                     {
-                        requestStream.Write(dataBytes, 0, dataBytes.Length);
-                        requestStream.Flush();
+                        responseContent = await reader.ReadToEndAsync();
                     }
-
-                    string responseContent = null;
-                    using (HttpWebResponse response = (HttpWebResponse)await request.GetResponseAsync())
-                    {
-                        using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
-                        {
-                            responseContent = await reader.ReadToEndAsync();
-                        }
-                        return JsonConvert.DeserializeObject<T>(responseContent);
-                    }
-                }
-                else
-                {
-                    return await HttpGet<T>(url);
+                    return JsonConvert.DeserializeObject<T>(responseContent);
                 }
             }
-            catch
+            else
             {
-                return default(T);
+                return await HttpGet<T>(url);
             }
         }
     }
