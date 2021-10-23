@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace EncryptLite
@@ -34,10 +33,9 @@ namespace EncryptLite
         /// <returns></returns>
         public static string ToBase64String(this string str, Encoding encode)
         {
-            byte[] bytes = encode.GetBytes(str);
             try
             {
-                return Convert.ToBase64String(bytes);
+                return Convert.ToBase64String(encode.GetBytes(str));
             }
             catch
             {
@@ -53,10 +51,9 @@ namespace EncryptLite
         /// <returns></returns>
         public static string FromBase64String(this string str, Encoding encode)
         {
-            var bytes = Convert.FromBase64String(str);
             try
             {
-                return encode.GetString(bytes);
+                return encode.GetString(Convert.FromBase64String(str));
             }
             catch
             {
