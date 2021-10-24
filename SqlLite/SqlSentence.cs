@@ -9,7 +9,6 @@ namespace SqlLite
     public class SqlSentence<TEntity> where TEntity : class
     {
         private string Sentence { get; set; }
-
         private string Table { get; set; } 
 
         public SqlSentence(string table)
